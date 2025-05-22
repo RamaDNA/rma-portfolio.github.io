@@ -1,100 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>GSAP ScrollSmoother Demo</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <ul>
+          <li><a href="#">Portfolio</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Project</a></li>
+        </ul>
+      </nav>
+    </header>
 
-  <!-- CSS -->
-  <link rel="stylesheet" href="assets/css/style.css" />
+    <main>
+      <section class="hero">
+        <h1 class="animated-text"></h1>
+      </section>
+    </main>
 
-  <!-- GSAP & Plugins -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollSmoother.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/Observer.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/Draggable.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/MotionPathPlugin.min.js"></script>
-
-</head>
-<body>
-
-  
-<section>
-<svg id="theCucas" viewBox="0 0 600 400">
-
-  <defs>
-    <mask id="theMask">
-      <path id="mask" d="M 270 250 C 150 200 100 50 300 50 Q 550 50 450 250 C 340 300 500 350 350 350 Q 50 350 270 250 " fill="#fff" stroke="none"/>
-    </mask>
-  </defs> 
-
-        <path id="mask" d="M 270 250 C 150 200 100 50 300 50 Q 550 50 450 250 C 340 300 500 350 350 350 Q 50 350 270 250  "  fill="#929292" stroke="none"/>
-  
-  <g class="cuca">
-  <g id="legsR" stroke="#484848">
-    <path class="legsR" d="M62.834 189.864l6.609 4.588c5.795 3.522-10.068 11.459-21.014 22.168-1.196.688-1.749.46-3.357.212.715.59 2.549 1.18 3.353.644 7.861-6.222 16.305-12.33 23.364-18.711 1.761-1.988 1.932-3.805-.11-5.381l-6.337-4.397-2.508.877z"/>
-    <path class="legsR" d="M50.658 190.628l6.609 4.589c6.037 5.383-23.97 11.394-37.676 14.513-1.187.27-1.634.146-3.073-.509.594.937 2.123 1.556 3.068 1.365 8.242-1.669 32.968-4.676 40.027-11.057 1.761-1.988 1.932-3.804-.11-5.381l-6.337-4.397-2.508.877z"/>
-    <path class="legsR" d="M39.123 190.628l6.609 4.589c6.037 5.383-27.815 3.151-41.521 6.27-1.187.27-1.634.146-3.073-.509.593.937 2.123 1.561 3.068 1.365 8.178-1.697 42.67-2.434 43.872-2.814 2.638-.833 1.932-3.804-.111-5.381l-6.336-4.397-2.508.877z"/>
-  </g>
-  <g id="legsL" stroke="#484848">
-    <path class="legsL" d="M62.834 172.295l6.609-4.589c5.795-3.522-10.068-11.458-21.014-22.168-1.196-.688-1.749-.46-3.357-.212.715-.59 2.549-1.179 3.353-.644 7.861 6.223 16.305 12.33 23.364 18.711 1.761 1.989 1.932 3.805-.11 5.382l-6.337 4.397-2.508-.877z"/>
-    <path class="legsL" d="M50.658 171.117l6.609-4.589c6.037-5.383-23.97-11.394-37.676-14.513-1.187-.27-1.634-.146-3.073.509.594-.937 2.123-1.556 3.068-1.365 8.242 1.669 32.968 4.676 40.027 11.057 1.761 1.988 1.932 3.804-.11 5.381l-6.337 4.397-2.508-.877z"/>
-    <path class="legsL" d="M39.123 170.53l6.609-4.589c6.037-5.383-27.815-3.152-41.521-6.271-1.187-.27-1.634-.145-3.073.509.593-.936 2.123-1.56 3.068-1.364 8.178 1.697 42.67 2.433 43.872 2.813 2.638.834 1.932 3.805-.111 5.382l-6.336 4.397-2.508-.877z"/>
-  </g>
-    
-  <path d="M84.262 182.919c11.763-.695 10.616 9.897 2.458 20.306-5.894 6.73-13.138 10.913-21.071 13.831" fill="none" stroke="#000"/>
-  <path d="M84.262 178.753c11.763.695 10.616-9.897 2.458-20.306-5.894-6.73-13.138-10.913-21.071-13.831" fill="none" stroke="#000" stroke-linecap="butt"/>
-  <path d="M69.871 172.354c-2.08 3.343-1.734 12.826-.164 16.996-18.531 5.29-37.764 5.91-55.484 1.39-14.712-3.752-12.294-16.446-.974-19.059 16.605-6.031 36.457-4.492 56.622.673z" fill="#636363" stroke="#000"/>
-  <path d="M84.742 180.701c0 2.101-1.332 3.807-2.973 3.807-1.641 0-2.973-1.706-2.973-3.807s1.332-3.807 2.973-3.807c1.641 0 2.973 1.706 2.973 3.807z" fill="#636363" stroke="#000"/>
-  <path d="M84.054 178.652c-1.337 1.606-3.007-.029-2.919-1.447" fill="#636363" stroke="#000" stroke-linecap="butt"/>
-  <path d="M84.009 182.936c-1.337-1.606-3.008.028-2.92 1.447" fill="#636363" stroke="#000" stroke-linecap="butt"/>
-  <path d="M78.067 174.59c3.305 3.262 3.628 8.119.125 11.802-3.802 3.999-8.541 5.618-10.406-.604-.696-3.259-.803-6.549-.147-9.88 1.17-5.94 5.404-4.632 10.428-1.318z" fill="#636363" stroke="#000"/>
-  </g>
-
-  
-  <g  mask="url(#theMask)">
-    <g class="cuca cuca02">
-      
-        <g id="legsR" fill="none" stroke="#none">
-    <path class="legsR" d="M62.834 189.864l6.609 4.588c5.795 3.522-10.068 11.459-21.014 22.168-1.196.688-1.749.46-3.357.212.715.59 2.549 1.18 3.353.644 7.861-6.222 16.305-12.33 23.364-18.711 1.761-1.988 1.932-3.805-.11-5.381l-6.337-4.397-2.508.877z"/>
-    <path class="legsR" d="M50.658 190.628l6.609 4.589c6.037 5.383-23.97 11.394-37.676 14.513-1.187.27-1.634.146-3.073-.509.594.937 2.123 1.556 3.068 1.365 8.242-1.669 32.968-4.676 40.027-11.057 1.761-1.988 1.932-3.804-.11-5.381l-6.337-4.397-2.508.877z"/>
-    <path class="legsR" d="M39.123 190.628l6.609 4.589c6.037 5.383-27.815 3.151-41.521 6.27-1.187.27-1.634.146-3.073-.509.593.937 2.123 1.561 3.068 1.365 8.178-1.697 42.67-2.434 43.872-2.814 2.638-.833 1.932-3.804-.111-5.381l-6.336-4.397-2.508.877z"/>
-  </g>
-  <g id="legsL" fill="none" stroke="#none">
-    <path class="legsL" d="M62.834 172.295l6.609-4.589c5.795-3.522-10.068-11.458-21.014-22.168-1.196-.688-1.749-.46-3.357-.212.715-.59 2.549-1.179 3.353-.644 7.861 6.223 16.305 12.33 23.364 18.711 1.761 1.989 1.932 3.805-.11 5.382l-6.337 4.397-2.508-.877z"/>
-    <path class="legsL" d="M50.658 171.117l6.609-4.589c6.037-5.383-23.97-11.394-37.676-14.513-1.187-.27-1.634-.146-3.073.509.594-.937 2.123-1.556 3.068-1.365 8.242 1.669 32.968 4.676 40.027 11.057 1.761 1.988 1.932 3.804-.11 5.381l-6.337 4.397-2.508-.877z"/>
-    <path class="legsL" d="M39.123 170.53l6.609-4.589c6.037-5.383-27.815-3.152-41.521-6.271-1.187-.27-1.634-.145-3.073.509.593-.936 2.123-1.56 3.068-1.364 8.178 1.697 42.67 2.433 43.872 2.813 2.638.834 1.932 3.805-.111 5.382l-6.336 4.397-2.508-.877z"/>
-  </g>
-    
-  <path d="M84.262 182.919c11.763-.695 10.616 9.897 2.458 20.306-5.894 6.73-13.138 10.913-21.071 13.831" fill="none" stroke="#000"/>
-  <path d="M84.262 178.753c11.763.695 10.616-9.897 2.458-20.306-5.894-6.73-13.138-10.913-21.071-13.831" fill="none" stroke="#000" stroke-linecap="butt"/>
-      
-
-  <path d="M69.871 172.354c-2.08 3.343-1.734 12.826-.164 16.996-18.531 5.29-37.764 5.91-55.484 1.39-14.712-3.752-12.294-16.446-.974-19.059 16.605-6.031 36.457-4.492 56.622.673z" fill="green" stroke="#000"/>
-  <path d="M84.742 180.701c0 2.101-1.332 3.807-2.973 3.807-1.641 0-2.973-1.706-2.973-3.807s1.332-3.807 2.973-3.807c1.641 0 2.973 1.706 2.973 3.807z" fill="green" stroke="#000"/>
-  <path d="M84.054 178.652c-1.337 1.606-3.007-.029-2.919-1.447" fill="green" stroke="#000" stroke-linecap="butt"/>
-  <path d="M84.009 182.936c-1.337-1.606-3.008.028-2.92 1.447" fill="green" stroke="#000" stroke-linecap="butt"/>
-  <path d="M78.067 174.59c3.305 3.262 3.628 8.119.125 11.802-3.802 3.999-8.541 5.618-10.406-.604-.696-3.259-.803-6.549-.147-9.88 1.17-5.94 5.404-4.632 10.428-1.318z" fill="green" stroke="#000"/>
-  </g>
-</g>
-  
-</svg>
-</section>
-
-<h2 class="gsap">GSA scrollTrigger</h2>
-
-<main>
-<h1>The Cockroaches.</h1> </p><p>
-<p>Arthropods similar to living <span>cockroaches</span> dominated the insect communities of the Carboniferous period. Modern <span>cockroaches</span> radiated from them by the middle of the Mesozoic.</p><p> This group of insects are nocturnal, only foraging for food and water at night. They are not considered eusocial because their populations are not divided into different caste systems; however, they are still social creatures and can live in groups with over a million individuals.</p><p> The <span>cockroach</span> is flattened dorsolaterally and is roughly oval with a shield-like plate, the pronotum, covering its thorax and posterior region of the head. The antennae are many-segmented, long and slender, and the mouthparts are adapted for chewing. </p><p>The forewings are normally leathery and the hind wings membranous. The coxae of the legs are flattened to enable the femurs to fit neatly against them when folded. <span>cockroaches</span> are hemimetabolous; there is no pupal stage and the nymphs resemble the adults apart from their size and the absence of wings.</p><p> Female <span>cockroaches</span> produce an egg sac known as an ootheca and can hold anywhere from 12-25 eggs depending upon the species.</p><p> Some species display parenting behavior, whereas other species have nothing to do with the young. In most species, growth to maturity takes three to four months, but in a few species, the nymph stage can last for several years. </p><p>The main factors affecting the duration of the nymph stage are seasonal differences, and the amount of nutrients received in the diet.</p>
-<p>As in most insect species, <span>cockroaches</span> communicate with one another by the release of pheromones. It has also been discovered that cockroaches release hydrocarbons from their body that are transferred through interactions of the antennae. </p><p>These hydrocarbons can aid in <span>cockroach</span> communication and can even tell whether an individual is a member of its kin or not to prevent inbreeding. </p><p><span>cockroaches</span> that have been isolated in a lab setting have shown extreme behavioral effects and are less stimulated by these hydrocarbons and pheromones, possibly suggesting a group environment is required for development of these communication skills.</p>
-
-</main>
-
-  <!-- Main Script -->
-  <script src="assets/js/main.js"></script>
-
-  
-</body>
+    <script src="assets/js/main.js"></script>
+  </body>
 </html>
