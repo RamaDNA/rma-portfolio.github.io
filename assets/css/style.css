@@ -9,7 +9,7 @@ body {
   background-color: #0d0d0d;
   color: #fff;
   height: 100vh;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 .navbar {
@@ -50,3 +50,119 @@ body {
   white-space: nowrap;
   overflow: hidden;
 }
+
+/***** section about *****/ 
+.about {
+  min-height: 100vh;
+  padding: 5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #121212;
+  text-align: center;
+}
+
+.title-about {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.desc {
+  max-width: 600px;
+  font-size: 1.2rem;
+  color: white;
+}
+/***** End section about *****/
+
+/***** Section project *****/ 
+.projects-wrapper {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.projects-horizontal {
+  display: flex;
+  height: 100%;
+}
+
+.project-card {
+  flex: 0 0 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  box-sizing: border-box;
+  background: #111;
+}
+
+.project-content {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  max-width: 1000px;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.project-img {
+  flex: 1 1 300px;
+  max-width: 400px;
+  width: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.project-info {
+  flex: 1 1 300px;
+  color: white;
+}
+
+.project-info h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.project-info p {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+
+.project-info a {
+  text-decoration: none;
+  background-color: #00ffd5;
+  color: black;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.project-info a:hover {
+  background-color: #00c6a5;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .project-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .project-img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .project-info h2 {
+    font-size: 1.5rem;
+  }
+
+  .project-info p {
+    font-size: 1rem;
+  }
+}
+
+/***** End Section project *****/

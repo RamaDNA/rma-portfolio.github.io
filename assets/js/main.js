@@ -1,5 +1,5 @@
 const textEl = document.querySelector('.animated-text');
-const messages = ["WELCOME TOO" , "MY WEBSITE","OWO"];
+const messages = ["WELCOME TOO" , "MY WEBSITE","O_W_O"];
 let messageIndex = 0;
 let charIndex = 0;
 let isDeleting = false;
@@ -30,8 +30,53 @@ function type() {
 gsap.from(".animated-text", {
   opacity: 0,
   y: 50,
-  duration: 2,
+  duration: 1,
   delay: 0.5,
   ease: "power2.out",
   onComplete: type,
 });
+
+
+// Scroll animation
+gsap.registerPlugin(ScrollTrigger);
+
+/*start section about*/
+gsap.from(".title-about", {
+  scrollTrigger: {
+    trigger: ".about",
+    start: "top 70%",
+  },
+  opacity: 0,
+  y: 50,
+  duration: 1,
+  ease: "power2.out",
+});
+
+gsap.from(".desc", {
+  scrollTrigger: {
+    trigger: ".about",
+    start: "top 70%",
+  },
+  opacity: 0,
+  y: 80,
+  duration: 1.2,
+  delay: 0.2,
+  ease: "power2.out",
+});
+/*end section about*/
+
+/*start section project*/
+const sections = gsap.utils.toArray(".project-card");
+
+gsap.to(".projects-horizontal", {
+  xPercent: -100 * (sections.length - 1),
+  ease: "none",
+  scrollTrigger: {
+    trigger: ".projects-wrapper",
+    pin: true,
+    scrub: 1,
+    snap: 1 / (sections.length - 1),
+    end: () => "+=" + document.querySelector(".projects-horizontal").offsetWidth,
+  },
+});
+/*end section projecr*/
