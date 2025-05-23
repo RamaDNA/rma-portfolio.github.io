@@ -12,6 +12,7 @@ body {
   overflow-x: hidden;
 }
 
+/***** navbar *****/ 
 .navbar {
   display: flex;
   justify-content: flex-end;
@@ -35,7 +36,8 @@ body {
 .navbar a:hover {
   color: #00ffd5;
 }
-
+/***** End navbar *****/
+/***** Section hero animated text *****/ 
 .hero {
   display: flex;
   align-items: center;
@@ -50,6 +52,18 @@ body {
   white-space: nowrap;
   overflow: hidden;
 }
+
+/* Responsive */
+@media (max-width: 768px) {
+  .animated-text {
+    font-size: 2.5rem;
+    border-right: 2px solid #00ffd5;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+}
+
+/***** End Section hero animated text *****/
 
 /***** section about *****/ 
 .about {
@@ -166,3 +180,4 @@ body {
 }
 
 /***** End Section project *****/
+

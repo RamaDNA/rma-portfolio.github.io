@@ -79,4 +79,4 @@ gsap.to(".projects-horizontal", {
     end: () => "+=" + document.querySelector(".projects-horizontal").offsetWidth,
   },
 });
-/*end section projecr*/
+/*end section project*/
