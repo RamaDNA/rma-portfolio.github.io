@@ -1,5 +1,5 @@
 const textEl = document.querySelector('.animated-text');
-const messages = ["WELCOME " ,"O_W_O"];
+const messages = ["WELCOME " ,"O_W_O","MY WEBSITE PORTFOLIO" , "WILL BE UPDATED SOON"];
 let messageIndex = 0;
 let charIndex = 0;
 let isDeleting = false;
