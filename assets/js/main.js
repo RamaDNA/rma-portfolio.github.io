@@ -65,6 +65,49 @@ gsap.from(".desc", {
 });
 /*end section about*/
 
+/*start section work experience*/
+gsap.utils.toArray(".work-item").forEach((item) => {
+  let title = item.querySelector("h2");
+  let date = item.querySelector(".work-date");
+  let desc = item.querySelector(".work-desc");
+  let list = item.querySelectorAll(".work-list-detail li");
+
+  // Timeline biar animasi berurutan
+  let tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: item,
+      start: "top 80%",
+      toggleActions: "play none none reverse"
+    }
+  });
+
+  tl.from(title, {
+    opacity: 0,
+    x: -50,
+    duration: 0.8,
+    ease: "power2.out"
+  })
+  .from(date, {
+    opacity: 0,
+    y: 20,
+    duration: 0.6
+  }, "-=0.4") // mulai agak bareng dengan title
+  .from(desc, {
+    opacity: 0,
+    y: 30,
+    duration: 0.8,
+    ease: "power2.out"
+  }, "-=0.3")
+  .from(list, {
+    opacity: 0,
+    x: -30,
+    duration: 0.6,
+    stagger: 0.15,
+    ease: "power2.out"
+  }, "-=0.2");
+});
+/*end section work experience*/
+
 /*start section project*/
 const sections = gsap.utils.toArray(".project-card");
 
@@ -80,3 +123,8 @@ gsap.to(".projects-horizontal", {
   },
 });
 /*end section project*/
+
+
+/*start footer*/
+
+/*end footer*/

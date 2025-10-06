@@ -83,17 +83,91 @@ body {
 }
 
 .desc {
-  max-width: 600px;
+  max-width: 700px;
   font-size: 1.2rem;
+  text-align: justify;
   color: white;
 }
 /***** End section about *****/
+
+
+/***** work experience *****/ 
+/* Work Experience */
+.work-wrapper {
+  background: #0d0d0d;
+  color: white;
+  padding: 4rem 2rem;
+  text-align: left;
+}
+
+.work-title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: white;
+  letter-spacing: 2px;
+}
+
+.work-list {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.work-item h2 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: #fff;
+}
+
+.work-date {
+  font-size: 0.9rem;
+  color: #aaa;
+  margin-bottom: 0.5rem;
+}
+
+.work-desc {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  text-align: justify;
+  color: white;
+}
+
+.work-list-detail {
+  margin: 0 0 0 1.5rem;
+  padding: 0;
+  list-style-type: disc;
+  color: white;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.work-list-detail li {
+  margin-bottom: 0.5rem;
+}
+
+
+ /***** End work experience *****/
+
 
 /***** Section project *****/ 
 .projects-wrapper {
   position: relative;
   height: 100vh;
   overflow: hidden;
+}
+
+.projects-title {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 2rem;
+  color: white;
+  z-index: 10;
 }
 
 .projects-horizontal {
@@ -166,7 +240,7 @@ body {
   }
 
   .project-img {
-    max-width: 100%;
+    max-width: 80%;
     height: auto;
   }
 
@@ -180,4 +254,96 @@ body {
 }
 
 /***** End Section project *****/
+
+/***** Start Section footer *****/
+.footer {
+  position: relative;
+  min-height: 100vh;
+  padding: 5rem 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  text-align: center;
+  overflow: hidden;
+
+  /* background gradient animasi */
+  background: linear-gradient(135deg, #0f0f0f, #1a1a1a);
+}
+
+.footer::before {
+  content: "";
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at 30% 30%, rgba(0,255,213,0.2), transparent 60%),
+              radial-gradient(circle at 70% 70%, rgba(0,150,255,0.2), transparent 60%);
+  animation: moveBackground 10s infinite alternate ease-in-out;
+  z-index: 0;
+}
+
+@keyframes moveBackground {
+  from {
+    transform: translate(-10%, -10%);
+  }
+  to {
+    transform: translate(10%, 10%);
+  }
+}
+
+.footer-tagline, 
+.footer-social, 
+.footer-bottom {
+  position: relative;
+  z-index: 1;
+}
+
+/* Typography */
+.footer-tagline h2 {
+  font-size: 2.5rem;
+  color: #00ffd5;
+  text-shadow: 0 0 10px rgba(0, 255, 213, 0.8), 0 0 20px rgba(0, 255, 213, 0.5);
+  margin-bottom: 0.5rem;
+}
+
+.footer-tagline p {
+  font-size: 1.2rem;
+  color: #ccc;
+}
+
+/* Social Links */
+.footer-social {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.footer-social a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  font-size: 1.1rem;
+  position: relative;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(5px);
+  transition: all 0.3s ease;
+}
+
+.footer-social a:hover {
+  color: #00ffd5;
+  background: rgba(0,255,213,0.1);
+  box-shadow: 0 0 10px rgba(0,255,213,0.6);
+}
+
+/* Bottom */
+.footer-bottom {
+  font-size: 0.9rem;
+  color: #777;
+}
+
+
+/***** End Section footer *****/
 
