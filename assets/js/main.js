@@ -18,7 +18,7 @@ function type() {
   } else {
     if (!isDeleting) {
       isDeleting = true;
-      setTimeout(type, 2000);
+      setTimeout(type, 1000);
     } else {
       isDeleting = false;
       messageIndex = (messageIndex + 1) % messages.length;
