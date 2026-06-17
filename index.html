@@ -1,133 +1,252 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portfolio</title>
-  <!-- ========== Start own css ========== -->
+  <meta name="description" content="Rama Dona Ariyatma - AI Engineer & Data Science Portfolio. Fresh Graduate specializing in AI/ML, LLM, and Data Engineering." />
+  <meta name="keywords" content="AI Engineer, Data Science, Portfolio, LangChain, Machine Learning, Python, RamaDNA" />
+  <meta property="og:title" content="RamaDNA Portfolio" />
+  <meta property="og:description" content="AI Engineer & Data Science Portfolio" />
+  <meta property="og:type" content="website" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧬</text></svg>" />
+  <title>RamaDNA | Portfolio</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <link rel="stylesheet" href="assets/css/style.css" />
-  <!-- ========== End own css ========== -->
 
-  <!-- ========== Start CDN Font Awesome ========== -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <!-- ========== End CDN Font Awesome ========== -->
-
-  <!-- ========== Start CDN GSAP ========== -->
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
-  <!-- ========== End CDN GSAP ========== -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollToPlugin.min.js"></script>
 </head>
-
 <body>
+  <canvas id="particle-canvas"></canvas>
+
   <header>
     <nav class="navbar">
+      <a href="#" class="nav-logo">RamaDNA</a>
       <ul>
-        <li><a href="#">Portfolio</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Project</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#work">Work</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
   </header>
 
   <main>
     <section class="hero">
-      <h1 class="animated-text"></h1>
+      <div class="hero-content">
+        <p class="hero-subtitle">AI ENGINEER & DATA SCIENTIST</p>
+        <h1 class="animated-text"></h1>
+        <p class="hero-desc">Building intelligent systems with LLMs, data pipelines, and machine learning.</p>
+        <div class="hero-actions">
+          <a href="#projects" class="btn-primary">View Projects <i class="fa-solid fa-arrow-right"></i></a>
+          <a href="assets/resume/RamaDonaAriyatma-AIEngineer.pdf" class="btn-secondary" download>
+            <i class="fa-solid fa-download"></i> Resume
+          </a>
+        </div>
+      </div>
     </section>
 
     <section id="about" class="about">
-      <h1 class="title-about">Who I am</h1>
-      <p class="desc">I'm a Fresh graduate in Computer Science specializing in Data Science with hands-on experience in developing end-to end AI/ML projects. Proficient in Python and experienced with ML/AI frameworks (TensorFlow, PyTorch) and LLM 
-        tools (LangChain, GPT, DeepSeek). Familiar with databases (MySQL, PostgreSQL, Oracle) and have basic exposure 
-        to data engineering workflows using (Airflow, DBT, GCP). Published two research papers on sentiment analysis and data mining. </p>
+      <div class="section-label">ABOUT</div>
+      <h1 class="section-title">Who I Am</h1>
+      <p class="about-desc">
+        I'm a Fresh graduate in Computer Science specializing in Data Science with hands-on experience in developing end-to-end AI/ML projects. Proficient in Python and experienced with ML/AI frameworks (TensorFlow, PyTorch) and LLM tools (LangChain, GPT, DeepSeek). Familiar with databases (MySQL, PostgreSQL, Oracle) and have basic exposure to data engineering workflows using (Airflow, DBT, GCP). Published two research papers on sentiment analysis and data mining.
+      </p>
+      <div class="about-stats">
+        <div class="stat-item">
+          <span class="stat-number">2</span>
+          <span class="stat-label">Published Papers</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">3+</span>
+          <span class="stat-label">AI Frameworks</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">5+</span>
+          <span class="stat-label">Projects</span>
+        </div>
+      </div>
     </section>
 
-    <!-- Work Experience Section -->
-<section class="work-wrapper">
-  <h1 class="work-title">WORK EXPERIENCE</h1>
-  <div class="work-list">
+    <section id="work" class="work-wrapper">
+      <div class="section-label">EXPERIENCE</div>
+      <h1 class="section-title">Work Experience</h1>
+      <div class="work-list">
+        <div class="work-item">
+          <div class="work-item-header">
+            <div class="work-icon"><i class="fa-solid fa-briefcase"></i></div>
+            <div>
+              <h2>Intern Web Development</h2>
+              <p class="work-company">South Tanjung Duren Ward</p>
+            </div>
+            <span class="work-date">Sep – Nov 2023</span>
+          </div>
+          <p class="work-desc">
+            Built and deployed a village office information system using Laravel MVC and MySQL, including a public landing page and admin dashboard with CRUD functionality. Created UML diagrams for system modeling.
+          </p>
+          <ul class="work-list-detail">
+            <li>Designed a user-friendly landing page for public service info & PDF downloads</li>
+            <li>Developed admin dashboard with full CRUD for services, files, and events</li>
+            <li>Applied Laravel MVC architecture for maintainability and scalability</li>
+            <li>Deployed the application for public and administrative use</li>
+          </ul>
+        </div>
+      </div>
+    </section>
 
-    <div class="work-item">
-      <h2>Intern Web Development – South Tanjung Duren Ward</h2>
-      <p class="work-date">Sep 2023 – Nov 2023 | Jakarta</p>
-      <p class="work-desc">
-        I was responsible for developing and deploying the landing page for users and the dashboard for administrators in a 
-        village office information system project, using Laravel MVC and Database MySQL. 
-      </p>
-      <ul class="work-list-detail">
-    <li>Designed and built a user-friendly landing page to provide public access to service procedures, downloadable PDF forms, and upcoming events.</li>
-    <li>Developed an admin dashboard with CRUD functionality (Create, Read, Update, Delete) for managing service information, uploading files, and publishing event announcements.</li>
-    <li>Applied the Laravel MVC architecture to structure the system for better maintainability and scalability.</li>
-    <li>Created and implemented UML diagrams (Activity Diagram, Use Case Diagram, Database Diagram, and Class Diagram) to model requirements, workflows, and data structures.</li>
-    <li>Deployed the application to make it accessible for both the public (citizens) and the administrators, ensuring usability and reliability.</li>
-  </ul>
-    </div>
-  </div>
-</section>
-
-    <section class="projects-wrapper">
+    <section id="projects" class="projects-wrapper">
+      <div class="projects-header">
+        <div class="section-label">PORTFOLIO</div>
+        <h1 class="section-title">Project Experience</h1>
+      </div>
       <div class="projects-horizontal">
-        <h1 class="projects-title">PROJECT EXPERIENCE</h1>
         <div class="project-card">
           <div class="project-content">
-            <img src="assets/images/chatbot-rag.png" alt="Project 1" class="project-img" />
+            <div class="project-img-wrapper">
+              <img src="assets/images/chatbot-rag.png" alt="RamaDNA Bot" class="project-img" />
+            </div>
             <div class="project-info">
+              <div class="project-tag">AI / RAG</div>
               <h2>RamaDNA Bot</h2>
-              <p>RamaDNA bot is AI chatbot designed to provide relevant and contextual answers based on uploaded documents, 
-                especially chatbots that have data about me. This bot uses modern NLP technology to understand user questions 
-                and provide accurate responses.</p>
-
-              <a href="https://myportfoliotest-4n4gb8u7vlspawc9vbzyjo.streamlit.app/ChatBot" target="_blank">View Project</a>
+              <p>AI chatbot using Retrieval-Augmented Generation that answers questions based on uploaded documents. Leverages modern NLP for accurate, contextual responses.</p>
+              <div class="project-tech">
+                <span>LangChain</span>
+                <span>Streamlit</span>
+                <span>RAG</span>
+              </div>
+              <a href="https://myportfoliotest-4n4gb8u7vlspawc9vbzyjo.streamlit.app/ChatBot" target="_blank" class="project-link">
+                Live Demo <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </a>
             </div>
           </div>
         </div>
 
         <div class="project-card">
           <div class="project-content">
-            <img src="assets/images/apriori-shop.png" alt="Project 2" class="project-img" />
+            <div class="project-img-wrapper">
+              <img src="assets/images/apriori-shop.png" alt="Apriori Coffee Shop" class="project-img" />
+            </div>
             <div class="project-info">
+              <div class="project-tag">DATA MINING</div>
               <h2>Apriori Coffee Shop Analyst</h2>
-              <p>Utilized transaction data from Kaggle (The Bread Basket dataset) to perform market basket analysis using the 
-                  Apriori algorithm. Aimed to uncover frequently purchased item combinations to generate actionable business 
-                  insights for future discount strategies</p>
-              <a href="https://github.com/RamaDNA/bread-coffee-apriori-analyst" target="_blank">View Project</a>
+              <p>Market basket analysis on Kaggle's Bread Basket dataset using Apriori algorithm to uncover frequently purchased item combinations for discount strategies.</p>
+              <div class="project-tech">
+                <span>Python</span>
+                <span>Apriori</span>
+                <span>Pandas</span>
+              </div>
+              <a href="https://github.com/RamaDNA/bread-coffee-apriori-analyst" target="_blank" class="project-link">
+                View on GitHub <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </a>
             </div>
           </div>
         </div>
 
         <div class="project-card">
           <div class="project-content">
-            <img src="assets/images/etl-youtube.png" alt="Project 3" class="project-img" />
+            <div class="project-img-wrapper">
+              <img src="assets/images/etl-youtube.png" alt="ETL YouTube" class="project-img" />
+            </div>
             <div class="project-info">
+              <div class="project-tag">DATA ENGINEERING</div>
               <h2>ETL YouTube Channel Comment</h2>
-              <p>Developed an ETL pipeline that extracts YouTube comments for analysis. The system is capable of retrieving 
-                comments from Indonesia’s trending videos as well as from specific channels (e.g., news channels) to capture 
-                public opinion and community insights.</p>
-              <a href="https://github.com/RamaDNA/etl-youtube-channel-comment" target="_blank">View Project</a>
+              <p>ETL pipeline that extracts YouTube comments from Indonesia's trending videos and news channels for public opinion and community insights analysis.</p>
+              <div class="project-tech">
+                <span>Python</span>
+                <span>YouTube API</span>
+                <span>ETL</span>
+              </div>
+              <a href="https://github.com/RamaDNA/etl-youtube-channel-comment" target="_blank" class="project-link">
+                View on GitHub <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </a>
             </div>
           </div>
         </div>
-        <!-- Tambahkan lebih banyak project-card jika perlu -->
+
+        <div class="project-card">
+          <div class="project-content">
+            <div class="project-img-wrapper placeholder-img">
+              <i class="fa-solid fa-microchip"></i>
+            </div>
+            <div class="project-info">
+              <div class="project-tag">AI / NLP</div>
+              <h2>Sentiment Analysis</h2>
+              <p>Research paper on sentiment analysis using machine learning and deep learning approaches. Published in a peer-reviewed journal.</p>
+              <div class="project-tech">
+                <span>Python</span>
+                <span>TensorFlow</span>
+                <span>NLP</span>
+              </div>
+              <a href="#" class="project-link">
+                Details <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-content">
+            <div class="project-img-wrapper placeholder-img">
+              <i class="fa-solid fa-database"></i>
+            </div>
+            <div class="project-info">
+              <div class="project-tag">DATA ENGINEERING</div>
+              <h2>Data Pipeline</h2>
+              <p>End-to-end data pipeline using Airflow, DBT, and GCP for orchestration, transformation, and cloud analytics.</p>
+              <div class="project-tech">
+                <span>Airflow</span>
+                <span>DBT</span>
+                <span>GCP</span>
+              </div>
+              <a href="#" class="project-link">
+                Details <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   </main>
-<footer class="footer">
-  <div class="footer-tagline">
-    <h2>✨ Ready to Collaborate?</h2>
-    <p>Let’s connect and build something amazing together.</p>
-  </div>
 
-  <div class="footer-social">
-    <a href="https://github.com/RamaDNA" target="_blank">GitHub</a>
-    <a href="https://www.linkedin.com/in/rama-dona-ariyatma-690141277/" target="_blank">LinkedIn</a>
-    <a href="assets/resume/RamaDonaAriyatma-AIEngineer.pdf" download>Download Resume</a>
-  </div>
+  <footer id="contact" class="footer">
+    <div class="section-label" style="color: #7fc8ff;">CONTACT</div>
+    <h2 class="footer-tagline">Ready to Collaborate?</h2>
+    <p class="footer-sub">Let's connect and build something amazing together.</p>
 
-  <div class="footer-bottom">
-    <p>&copy; 2025 RamaDNA. All Rights Reserved.</p>
-  </div>
-</footer>
+    <div class="footer-cta">
+      <a href="mailto:ramadona@example.com" class="btn-primary">
+        <i class="fa-solid fa-paper-plane"></i> Get In Touch
+      </a>
+    </div>
+
+    <div class="footer-social">
+      <a href="https://github.com/RamaDNA" target="_blank">
+        <i class="fa-brands fa-github"></i> GitHub
+      </a>
+      <a href="https://www.linkedin.com/in/rama-dona-ariyatma-690141277/" target="_blank">
+        <i class="fa-brands fa-linkedin-in"></i> LinkedIn
+      </a>
+      <a href="assets/resume/RamaDonaAriyatma-AIEngineer.pdf" download>
+        <i class="fa-solid fa-file-lines"></i> Resume AI
+      </a>
+      <a href="assets/resume/RamaDonaAriyatma-DataAnalyst.pdf" download>
+        <i class="fa-solid fa-chart-bar"></i> Data Analyst
+      </a>
+      <a href="assets/resume/RamaDonaAriyatma-DataEngineer.pdf" download>
+        <i class="fa-solid fa-gear"></i> Data Engineer
+      </a>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2026 RamaDNA. All rights reserved.</p>
+    </div>
+  </footer>
+
   <script src="assets/js/main.js"></script>
 </body>
-
 </html>
